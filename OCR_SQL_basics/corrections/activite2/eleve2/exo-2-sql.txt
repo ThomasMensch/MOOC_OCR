@@ -1,0 +1,9 @@
+1: select * from ( select last_name, count(*) as cnt from employees group by last_name) a
+	where a.cnt>200;
+2: select * from salaries s
+	where s.emp_no in(
+	  select emp_no from employees
+	  where employees.hire_date>'1999-08-20'
+	);
+3: select * from employees order by birth_date asc limit 5;
+4: select * from employees where last_name like '_s%';
